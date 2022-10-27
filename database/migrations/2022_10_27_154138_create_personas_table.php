@@ -17,20 +17,19 @@ return new class extends Migration
             $table->string('apellidos')->comment('');
             $table->string('nombres')->comment('');
             $table->string('apodo')->comment('');
-            $table->tinyInt('genero',1)->comment('');  
+            $table->tinyInteger('genero',1)->comment('');  
             $table->date('fechaNacimiento')->comment(''); 
             $table->string('profesion')->comment(''); 
             $table->text('observacion')->comment(''); 
-            $table->tinyInt('famoso',1)->comment('');   
-            
+            $table->tinyInteger('famoso',1)->comment('');    
             $table->timestamps();
-            $table->delete();
+            $table->softDeletes();
         });
         \App\Models\Persona::insert([
-            [306, 'Elías', 'Betty', NULL, 0, NULL, 'Productora', NULL, NULL, '2017-06-06 22:59:36', '2021-08-06 20:22:35', NULL],
-            [330, 'Acuña Villalobos', 'Pedro', NULL, 1, NULL, 'Editor General de Televisión', NULL, NULL, '2017-06-17 22:53:24', '2021-03-15 18:48:56', NULL],
-            [1102, 'Coya ', 'Hugo', '', 1, NULL, '', '', 1, '2019-05-17 14:33:52', '2019-05-17 14:33:52', NULL],
-            [1583, 'Garcia ', 'Brenda', '', 0, NULL, '', '', NULL, '2020-04-23 14:45:57', '2020-04-23 14:45:57', NULL]
+            ['id' => 306, 'apellidos' => 'Elías','nombres' => 'Betty','apodo' => NULL,'genero' => 0,'fechaNacimiento' => NULL,'profesion' => 'Productora','observacion' => NULL,'famoso' => NULL,'created_at' => '2017-06-06 22:59:36','updated_at' => '2021-08-06 20:22:35','deleted_at' => NULL],
+            ['id' => 330, 'apellidos' => 'Acuña Villalobos','nombres' => 'Pedro','apodo' => NULL,'genero' => 1,'fechaNacimiento' => NULL,'profesion' => 'Editor General de Televisión','observacion' => NULL,'famoso' => NULL,'created_at' => '2017-06-17 22:53:24','updated_at' => '2021-03-15 18:48:56','deleted_at' => NULL],
+            ['id' => 1102,'apellidos' => 'Coya ','nombres' => 'Hugo','apodo' => '','genero' => 1,'fechaNacimiento' => NULL,'profesion' => '','observacion' => '','famoso' => 1,'created_at' => '2019-05-17 14:33:52','updated_at' => '2019-05-17 14:33:52','deleted_at' => NULL],
+            ['id' => 1583,'apellidos' => 'Garcia ','nombres' => 'Brenda','apodo' => '','genero' => 0,'fechaNacimiento' => NULL,'profesion' => '','observacion' => '','famoso' => NULL,'created_at' => '2020-04-23 14:45:57','updated_at' => '2020-04-23 14:45:57','deleted_at' => NULL]
         ]);    
     }
 

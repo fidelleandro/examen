@@ -15,16 +15,23 @@ return new class extends Migration
     {
         Schema::create('detalle_plan_medios', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('idPlanMedio')->comment('');
-            $table->bigInteger('idProgramaContacto')->comment('');
+            $table->bigInteger('idPlanMedio')->unsigned()->comment('');
+            $table->bigInteger('idProgramaContacto')->unsigned()->comment('');
             $table->string('idsMedioPlataforma')->comment('');
-            $table->tinyInt('tipoTier',4)->comment(''); 
-            $table->tinyInt('tipoNota',4)->comment(''); 
-            $table->tinyInt('tipoEtapa',4)->comment(''); 
-            $table->tinyInt('statusPublicado',4)->comment(''); 
-            
+            $table->tinyInteger('tipoTier',4)->comment(''); 
+            $table->tinyInteger('tipoNota',4)->comment(''); 
+            $table->tinyInteger('tipoEtapa',4)->comment(''); 
+            $table->tinyInteger('statusPublicado',4)->comment(''); 
             $table->timestamps();
-            $table->delete();
+            $table->softDeletes();
+            $table->foreign('idPlanMedio')
+                       ->references('id')
+                       ->on('medios')
+                       ->onCascade('delete');
+            $table->foreign('idProgramaContacto')
+                       ->references('id')
+                       ->on('programa_contactos')
+                       ->onCascade('delete');           
         });
         \App\Models\DetallePlanMedio::insert([
             [4543, 516, 1277, '99', 2, 2, 2, 1, '2019-05-17 14:30:21', '2021-05-30 02:16:19', NULL],
