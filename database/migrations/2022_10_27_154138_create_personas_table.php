@@ -22,8 +22,9 @@ return new class extends Migration
             $table->string('profesion')->comment(''); 
             $table->text('observacion')->comment(''); 
             $table->tinyInt('famoso',1)->comment('');   
-            $table->delete();
+            
             $table->timestamps();
+            $table->delete();
         });
         \App\Models\Persona::insert([
             [306, 'Elías', 'Betty', NULL, 0, NULL, 'Productora', NULL, NULL, '2017-06-06 22:59:36', '2021-08-06 20:22:35', NULL],

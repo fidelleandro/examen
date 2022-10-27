@@ -28,9 +28,9 @@ return new class extends Migration
             $table->tinyInt('autoridadCliente',4)->comment('');
             $table->tinyInt('mediaticoCliente',4)->comment('');
             $table->tinyInt('autoridadVoceros',4)->comment('');
-            $table->tinyInt('mediaticoVoceros',4)->comment('');
-            $table->delete();
+            $table->tinyInt('mediaticoVoceros',4)->comment(''); 
             $table->timestamps();
+            $table->delete();
             // $table->foreign('cliente_id')
             //            ->references('id')
             //            ->on('roles')

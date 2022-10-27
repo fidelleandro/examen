@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('valor')->comment('');
             $table->integer('alcance')->comment('');  
             $table->string('observacion')->comment('');    
-            $table->delete();
+            
             $table->timestamps();
+            $table->delete();
         });
         \App\Models\MedioPlataforma::insert([
             [3, 76, 3, '10', 750000, '', '2017-07-09 03:19:04', '2017-07-09 03:19:04', NULL],

@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('razonSocial')->comment('');
             $table->string('rubro')->comment('');
             $table->string('observacion')->comment(''); 
-            $table->delete();
+            
             $table->timestamps();
+            $table->delete();
         });
         \App\Models\Cliente::insert([
             [32, 'Making Connexion', 'Making Connexion SAC', 'Comunicaciones', '', '2019-05-17 14:23:32', '2019-05-17 14:23:32', NULL],

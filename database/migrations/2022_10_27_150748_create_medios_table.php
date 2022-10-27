@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('alias')->comment('');
             $table->tinyInt('tipoRegion',4)->comment('');
             $table->text('observacion')->comment('');  
-            $table->delete();
+            
             $table->timestamps();
+            $table->delete();
         });
         \App\Models\Medio::insert([
             [22, 'El Comercio', 'EL COMERCIO', 1, NULL, '2021-03-02 00:34:50', '2021-05-20 16:51:25', NULL],

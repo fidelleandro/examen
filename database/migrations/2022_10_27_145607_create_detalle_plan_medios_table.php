@@ -22,8 +22,9 @@ return new class extends Migration
             $table->tinyInt('tipoNota',4)->comment(''); 
             $table->tinyInt('tipoEtapa',4)->comment(''); 
             $table->tinyInt('statusPublicado',4)->comment(''); 
-            $table->delete();
+            
             $table->timestamps();
+            $table->delete();
         });
         \App\Models\DetallePlanMedio::insert([
             [4543, 516, 1277, '99', 2, 2, 2, 1, '2019-05-17 14:30:21', '2021-05-30 02:16:19', NULL],
