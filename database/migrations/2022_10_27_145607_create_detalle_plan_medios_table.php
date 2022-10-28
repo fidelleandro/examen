@@ -18,10 +18,10 @@ return new class extends Migration
             $table->bigInteger('idPlanMedio')->unsigned()->comment('');
             $table->bigInteger('idProgramaContacto')->unsigned()->comment('');
             $table->string('idsMedioPlataforma')->comment('');
-            $table->tinyInteger('tipoTier',4)->comment(''); 
-            $table->tinyInteger('tipoNota',4)->comment(''); 
-            $table->tinyInteger('tipoEtapa',4)->comment(''); 
-            $table->tinyInteger('statusPublicado',4)->comment(''); 
+            $table->boolean('tipoTier',4)->comment(''); 
+            $table->boolean('tipoNota',4)->comment(''); 
+            $table->boolean('tipoEtapa',4)->comment(''); 
+            $table->boolean('statusPublicado',4)->comment(''); 
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('idPlanMedio')

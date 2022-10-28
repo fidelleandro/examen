@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('apellidos')->comment('');
             $table->string('nombres')->comment('');
             $table->string('apodo')->comment('');
-            $table->tinyInteger('genero',1)->comment('');  
+            $table->boolean('genero',1)->comment('');  
             $table->date('fechaNacimiento')->comment(''); 
             $table->string('profesion')->comment(''); 
             $table->text('observacion')->comment(''); 
-            $table->tinyInteger('famoso',1)->comment('');    
+            $table->boolean('famoso',1)->comment('');    
             $table->timestamps();
             $table->softDeletes();
         });

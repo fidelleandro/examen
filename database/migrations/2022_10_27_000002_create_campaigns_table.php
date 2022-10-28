@@ -17,18 +17,18 @@ return new class extends Migration
             $table->id();
             $table->string('titulo')->comment('');
             $table->date('fechaFin')->comment('');
-            $table->bigInteger('cliente_id')->unsigned()->comment('');
+            $table->bigInteger('cliente_id')->unsigned();
             $table->text('observacion')->comment('');
-            $table->tinyInteger('tipoPublico',4)->comment('');
-            $table->tinyInteger('tipoObjetivo',4)->comment('');
-            $table->tinyInteger('tipoAudiencia',4)->comment('');
-            $table->tinyInteger('interesPublico',4)->comment('');
-            $table->tinyInteger('novedad',4)->comment('');
-            $table->tinyInteger('actualidad',4)->comment('');
-            $table->tinyInteger('autoridadCliente',4)->comment('');
-            $table->tinyInteger('mediaticoCliente',4)->comment('');
-            $table->tinyInteger('autoridadVoceros',4)->comment('');
-            $table->tinyInteger('mediaticoVoceros',4)->comment(''); 
+            $table->boolean('tipoPublico',4)->comment('');
+            $table->boolean('tipoObjetivo',4)->comment('');
+            $table->boolean('tipoAudiencia',4)->comment('');
+            $table->boolean('interesPublico',4)->comment('');
+            $table->boolean('novedad',4)->comment('');
+            $table->boolean('actualidad',4)->comment('');
+            $table->boolean('autoridadCliente',4)->comment('');
+            $table->boolean('mediaticoCliente',4)->comment('');
+            $table->boolean('autoridadVoceros',4)->comment('');
+            $table->boolean('mediaticoVoceros',4)->comment(''); 
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('cliente_id')
@@ -36,6 +36,7 @@ return new class extends Migration
                        ->on('clientes')
                        ->onCascade('delete');
         });
+        
         \App\Models\Campaign::insert([
             ['id' => 448, 
              'titulo' => 'Proyecto: Agente de Prensa 2019',

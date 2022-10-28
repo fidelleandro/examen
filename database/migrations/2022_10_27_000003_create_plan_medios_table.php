@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('campaign_id')->unsigned()->comment('');
             $table->string('nombre')->comment('');
             $table->string('descripcion')->comment('');
-            $table->tinyInteger('status',4)->comment('');  
+            $table->boolean('status',4)->comment('');  
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('campaign_id')
