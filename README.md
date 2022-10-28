@@ -13,12 +13,13 @@ Configuración:
 
 - Configurar archivo .env
 /**************************/
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=examen
-    DB_USERNAME=root
-    DB_PASSWORD=
+<ul>
+    <li>DB_CONNECTION=mysql</li>
+    <li>DB_HOST=127.0.0.1</li>
+    <li>DB_PORT=3306</li>
+    <li>DB_DATABASE=examen</li>
+    <li>DB_USERNAME=root</li>
+    <li>DB_PASSWORD=</li>
 /**************************/    
 - Crear migraciones: php artisan migrate
 - Ejecutar app: php artisan serve
