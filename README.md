@@ -20,13 +20,13 @@ Configuración:
     <li>DB_DATABASE=examen</li>
     <li>DB_USERNAME=root</li>
     <li>DB_PASSWORD=</li>
-/**************************/    
+/***********************************************/    
 <ul>    
     <li>- Crear migraciones: php artisan migrate</li>
     <li>- Ejecutar app: php artisan serve</li>
     <li>- Ruta: /results</li>
 </ul>
-
+/***********************************************/    
  
  
 
