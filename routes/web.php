@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ApiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,4 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+/***********************RESULTADO DE API******************/
+Route::get('/result',[ApiController::class, 'index'])
+//->middleware('auth')
+->name('result');
+/*********************************************************/
 require __DIR__.'/auth.php';

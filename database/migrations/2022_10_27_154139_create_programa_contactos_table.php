@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('programa_contactos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('programa_id')->unsigned()->comment(''); 
-            $table->bigInteger('idContacto')->comment('');  
+            $table->bigInteger('idContacto')->unsigned()->comment('');  
             $table->boolean('tipoInfluencia',4)->comment('');  
             $table->string('idsMedioPlataforma')->comment('');  
             $table->string('observacion')->nullable()->comment('');  
@@ -27,6 +27,10 @@ return new class extends Migration
                        ->references('id')
                        ->on('programas')
                        ->onCascade('delete');
+            $table->foreign('idContacto')
+                       ->references('id')
+                       ->on('personas')
+                       ->onCascade('delete');                      
         });
 
         \App\Models\ProgramaContacto::insert([
