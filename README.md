@@ -21,10 +21,11 @@ Configuración:
     <li>DB_USERNAME=root</li>
     <li>DB_PASSWORD=</li>
 /**************************/    
-- Crear migraciones: php artisan migrate
-- Ejecutar app: php artisan serve
-- Ruta: /results
-
+<ul>    
+    <li>- Crear migraciones: php artisan migrate</li>
+    <li>- Ejecutar app: php artisan serve</li>
+    <li>- Ruta: /results</li>
+</ul>
 
  
  
